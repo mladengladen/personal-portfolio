@@ -11,6 +11,18 @@
     setInterval(updateTime, 30000);
   } catch (e) {}
 
+  // In-page links scroll without adding #section to the URL
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var id = link.getAttribute('href').slice(1);
+      var target = id === 'top' ? document.body : document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      if (id === 'top') window.scrollTo({ top: 0 }); else target.scrollIntoView();
+      if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    });
+  });
+
   // Nav border once the page scrolls
   var nav = document.getElementById('nav');
   function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 8); }
