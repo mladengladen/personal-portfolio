@@ -1,120 +1,110 @@
 (function () {
-  // Custom cursor
-  var cursor = document.getElementById('cursor');
-  var follower = document.getElementById('cursorFollower');
-  var fx = 0, fy = 0, cx = 0, cy = 0;
+  var root = document.documentElement;
 
-  document.addEventListener('mousemove', function (e) {
-    cx = e.clientX;
-    cy = e.clientY;
-    cursor.style.left = (cx - 5) + 'px';
-    cursor.style.top = (cy - 5) + 'px';
-  });
+  // Local time in Skopje
+  var localTime = document.getElementById('localTime');
+  try {
+    var timeFormat = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Skopje', hour: '2-digit', minute: '2-digit' });
+    var updateTime = function () { localTime.textContent = timeFormat.format(new Date()) + ' local time'; };
+    updateTime();
+    localTime.hidden = false;
+    setInterval(updateTime, 30000);
+  } catch (e) {}
 
-  function animFollower() {
-    fx += (cx - fx - 18) * 0.15;
-    fy += (cy - fy - 18) * 0.15;
-    follower.style.left = fx + 'px';
-    follower.style.top = fy + 'px';
-    requestAnimationFrame(animFollower);
-  }
-  animFollower();
-
-  document.querySelectorAll('a, .acc-header, .gallery-item--clickable, .modal-close').forEach(function (el) {
-    el.addEventListener('mouseenter', function () {
-      cursor.style.transform = 'scale(2.5)';
-      follower.style.transform = 'scale(1.5)';
-    });
-    el.addEventListener('mouseleave', function () {
-      cursor.style.transform = 'scale(1)';
-      follower.style.transform = 'scale(1)';
-    });
-  });
-
-  // Nav scroll
+  // Nav border once the page scrolls
   var nav = document.getElementById('nav');
-  window.addEventListener('scroll', function () {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
-  });
+  function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Highlight the nav link for the section in view
+  var navLinks = document.querySelectorAll('.nav-links a');
+  var sectionObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var key = entry.target.dataset.nav;
+      navLinks.forEach(function (link) {
+        link.setAttribute('aria-current', link.getAttribute('href') === '#' + key ? 'true' : 'false');
+      });
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  document.querySelectorAll('[data-nav]').forEach(function (el) { sectionObserver.observe(el); });
 
   // Scroll reveal
   var revealObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(function (el) { revealObserver.observe(el); });
 
-  // Accordion
-  document.querySelectorAll('.acc-header').forEach(function (header) {
-    header.addEventListener('click', function () {
-      // If this header links externally, open in new tab
-      if (header.dataset.href) {
-        window.open(header.dataset.href, '_blank', 'noopener,noreferrer');
-        return;
-      }
+  // Lightbox
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+  var lightboxTitle = document.getElementById('lightboxTitle');
+  var lightboxBody = document.getElementById('lightboxBody');
 
-      // If this header has a data-modal, open that modal instead
-      if (header.dataset.modal) {
-        openModal(header.dataset.modalSrc || '', header.dataset.modalTitle || '');
-        return;
-      }
+  function openLightbox(src, title, alt) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || title;
+    lightboxTitle.textContent = title;
+    lightboxBody.scrollTop = 0;
+    lightbox.showModal();
+    root.style.overflow = 'hidden';
+  }
 
-      var item = header.closest('.acc-item');
-      var isOpen = item.classList.contains('open');
-
-      document.querySelectorAll('.acc-item').forEach(function (i) {
-        i.classList.remove('open');
-        var lbl = i.querySelector('.toggle-label');
-        if (lbl) lbl.textContent = 'View mockups';
-      });
-
-      if (!isOpen) {
-        item.classList.add('open');
-        var lbl = item.querySelector('.toggle-label');
-        if (lbl) lbl.textContent = 'Close';
-        setTimeout(function () {
-          item.querySelector('.acc-body').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }, 150);
-      }
+  document.querySelectorAll('.shot-frame').forEach(function (frame) {
+    frame.addEventListener('click', function () {
+      openLightbox(frame.dataset.full, frame.dataset.title, frame.querySelector('img').alt);
     });
   });
 
-  // Modal
-  var modal = document.getElementById('imageModal');
-  var modalClose = document.getElementById('modalClose');
-  var modalImg = document.getElementById('modalImg');
-  var modalTitle = document.getElementById('modalTitle');
+  document.getElementById('lightboxClose').addEventListener('click', function () { lightbox.close(); });
+  lightbox.addEventListener('click', function (e) {
+    if (e.target === lightbox) lightbox.close();
+  });
+  lightbox.addEventListener('close', function () { root.style.overflow = ''; });
 
-  function openModal(src, title) {
-    modalImg.src = src || '';
-    modalImg.alt = title || '';
-    modalTitle.textContent = title || '';
-    modal.classList.add('open');
-    modal.querySelector('.modal-container').scrollTop = 0;
-    document.body.style.overflow = 'hidden';
+  // Copy email
+  var copyBtn = document.getElementById('copyEmail');
+  var copyTip = document.getElementById('copyTip');
+  var copyStatus = document.getElementById('copyStatus');
+  var copyTimer;
+
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    // Fallback for non-secure contexts (e.g. opening the file locally)
+    var field = document.createElement('textarea');
+    field.value = text;
+    field.setAttribute('readonly', '');
+    field.style.position = 'fixed';
+    field.style.opacity = '0';
+    document.body.appendChild(field);
+    field.select();
+    var ok = document.execCommand('copy');
+    document.body.removeChild(field);
+    return ok ? Promise.resolve() : Promise.reject();
   }
 
-  function closeModal() {
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
+  function showCopyResult(ok) {
+    copyBtn.classList.toggle('is-done', ok);
+    copyBtn.classList.add('show-tip');
+    copyTip.textContent = ok ? 'Copied' : 'Couldn’t copy';
+    copyStatus.textContent = ok ? 'Email copied' : 'Couldn’t copy the email';
+    clearTimeout(copyTimer);
+    copyTimer = setTimeout(function () {
+      copyBtn.classList.remove('is-done', 'show-tip');
+      copyTip.textContent = 'Copy email';
+      copyStatus.textContent = '';
+    }, 1800);
   }
 
-  document.querySelectorAll('.gallery-item--clickable').forEach(function (el) {
-    el.addEventListener('click', function (e) {
-      e.stopPropagation();
-      var img = el.querySelector('img');
-      openModal(el.dataset.modalSrc || img.src, img.alt);
-    });
-  });
-
-  if (modalClose) modalClose.addEventListener('click', closeModal);
-
-  modal.addEventListener('click', function (e) {
-    if (e.target === modal) closeModal();
-  });
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeModal();
+  copyBtn.addEventListener('click', function () {
+    var result;
+    try { result = copyText(copyBtn.dataset.copy); } catch (e) { result = Promise.reject(); }
+    result.then(function () { showCopyResult(true); }, function () { showCopyResult(false); });
   });
 })();

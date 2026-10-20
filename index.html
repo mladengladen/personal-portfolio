@@ -3,352 +3,311 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mladen Stojanovski - Portfolio</title>
+<title>Mladen Stojanovski — UX/UI Designer</title>
+<meta name="description" content="Mladen Stojanovski is a designer and developer in Skopje who designs and builds digital products, from UX/UI to working code. Co-founder of Braven Studio, previously at GlycanAge.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mladen Stojanovski — UX/UI Designer">
+<meta property="og:description" content="A designer who codes, and a developer who cares about aesthetics. Platforms, design systems and landing pages.">
+<meta property="og:url" content="https://ms-design-portfolio.vercel.app/">
+<meta property="og:image" content="https://ms-design-portfolio.vercel.app/ms_logo.png">
 <link rel="icon" type="image/png" href="ms_logo.png">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>
+  document.documentElement.classList.add('js');
+</script>
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-follower" id="cursorFollower"></div>
-
 <!-- NAV -->
-<nav id="nav">
-  <a href="#hero" class="nav-logo">MS<span>.</span>design_portfolio</a>
-  <ul class="nav-links">
-    <li><a href="#hero">Home</a></li>
-    <li><a href="#work">Portfolio</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="nav-brand" aria-label="Mladen Stojanovski, back to top">[ms]<span>.portfolio</span></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div style="position:relative;">
-    <p class="hero-number">001 — INTRODUCTION</p>
+<main id="top">
+
+  <!-- HERO -->
+  <header class="hero wrap">
     <h1 class="hero-title">Mladen<br><em>Stojanovski</em></h1>
-    <div class="hero-bottom">
-      <p class="hero-desc">UX/UI Designer &amp; Web Developer crafting purposeful digital experiences — from landing pages to full product design systems.</p>
-      <div class="hero-meta">
-        <p>Based in <span>Skopje, North Macedonia</span></p>
-        <p>Available for <span>Freelance &amp; Full-time</span></p>
-        <p>Open to <span>Remote Opportunities <br> Hybrid / On-site</span></p>
+    <div class="hero-foot">
+      <div>
+        <p class="hero-intro">A designer who codes, and a developer who cares about aesthetics. I design and build digital products, from clinic platforms to design systems and landing pages.</p>
+        <div class="hero-actions">
+          <a class="btn btn--solid" href="Mladen-Stojanovski-CV.pdf" target="_blank" rel="noopener">
+            View CV
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 16L16 8M9 8h7v7"/></svg>
+          </a>
+          <a class="btn" href="https://www.linkedin.com/in/mladen-stojanovski/" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 16L16 8M9 8h7v7"/></svg>
+          </a>
+        </div>
       </div>
+      <dl class="facts">
+        <div><dt>Currently</dt><dd>Co-founder &amp; design lead, <a href="https://www.bravenstudio.com/" target="_blank" rel="noopener noreferrer">Braven Studio</a></dd></div>
+        <div><dt>Previously</dt><dd>UX/UI Designer, GlycanAge</dd></div>
+        <div><dt>Based in</dt><dd>Skopje, North Macedonia <span class="local-time" id="localTime" hidden></span></dd></div>
+        <div><dt>Open to</dt><dd><span class="dot" aria-hidden="true"></span>Freelance &amp; full-time · remote, hybrid or on-site</dd></div>
+      </dl>
     </div>
-    <div class="scroll-indicator">
-      <div class="scroll-line"></div>
-      Scroll to explore
-    </div>
-  </div>
-</section>
+  </header>
 
-<!-- MARQUEE -->
-<div class="marquee-section">
-  <div class="marquee-track">
-    <span class="marquee-item">UX/UI Design<span>&#10022;</span>Web Development<span>&#10022;</span>Graphic Design<span>&#10022;</span>Figma<span>&#10022;</span>Webflow<span>&#10022;</span>Adobe Suite<span>&#10022;</span>JavaScript<span>&#10022;</span>3D Design<span>&#10022;</span></span>
-    <span class="marquee-item">UX/UI Design<span>&#10022;</span>Web Development<span>&#10022;</span>Graphic Design<span>&#10022;</span>Figma<span>&#10022;</span>Webflow<span>&#10022;</span>Adobe Suite<span>&#10022;</span>JavaScript<span>&#10022;</span>3D Design<span>&#10022;</span></span>
-  </div>
-</div>
-
-<!-- WORK -->
-<section id="work">
-  <p class="section-label reveal">002 — Selected Work</p>
-  <h2 class="section-title reveal reveal-delay-1">Projects &amp;<br>Case Studies</h2>
-  <p class="work-hint reveal reveal-delay-2">Click any project to view more</p>
-
-  <div class="work-accordion">
-
-    <!-- PROJECT 01 -->
-    <div class="acc-item reveal">
-      <div class="acc-header">
-        <div class="acc-left">
-          <span class="work-num">Project 01</span>
-          <h3 class="work-name">GlycanAge - Partner, Consumer &amp; Affiliate Landing Pages</h3>
-          <div class="work-tags">
-            <span class="tag">UX/UI Design</span>
-            <span class="tag">Figma</span>
-            <span class="tag">Landing Page</span>
-            <span class="tag">B2B</span>
-          </div>
-        </div>
-        <div class="acc-right">
-          <p class="work-desc">Designed two conversion-focused landing pages for GlycanAge's partner and affiliate programs. The B2B partner page targets clinics and practitioners, while the affiliate page converts influencers with clear commission structures and trust signals.</p>
-          <div class="acc-toggle">
-            <span class="toggle-label">View mockups</span>
-            <span class="toggle-icon">+</span>
-          </div>
-        </div>
-      </div>
-      <div class="acc-body">
-        <div class="acc-gallery">
-          <div class="gallery-item gallery-item--clickable" data-modal-src="GlycanAge - Affiliate page v1.jpg">
-            <img src="GlycanAge - Affiliate page v1.jpg" alt="GlycanAge Affiliate Page v1">
-          </div>
-          <div class="gallery-item gallery-item--clickable" data-modal-src="GlycanAge - Consumer page v2.jpg">
-            <img src="GlycanAge - Consumer page v2.jpg" alt="GlycanAge Consumer Page v2">
-          </div>
-          <div class="gallery-item gallery-item--clickable" data-modal-src="GlycanAge - Partner page v2.jpg">
-            <img src="GlycanAge - Partner page v2.jpg" alt="GlycanAge Partner Page v2">
-          </div>
-        </div>
-      </div>
+  <!-- WORK -->
+  <section id="work" class="section wrap" data-nav="work">
+    <div class="section-head reveal">
+      <h2 class="section-title">Selected work</h2>
+      <p class="section-note">
+        <span class="when-hover">Click a page to view it full size.</span>
+        <span class="when-touch">Tap a page to view it full size.</span>
+      </p>
     </div>
 
-    <!-- PROJECT 02 -->
-    <div class="acc-item reveal">
-      <div class="acc-header">
-        <div class="acc-left">
-          <span class="work-num">Project 02</span>
-          <h3 class="work-name">GlycanAge - Web Component Library</h3>
-          <div class="work-tags">
-            <span class="tag">UX/UI</span>
-            <span class="tag">Components</span>
-            <span class="tag">Design System</span>
-          </div>
+    <article class="project reveal">
+      <div class="project-head">
+        <div>
+          <h3 class="project-title">Braven Studio</h3>
+          <p class="project-meta">2026 – present · Brand · Web design · Co-founder</p>
+          <a class="project-link" href="https://www.bravenstudio.com/" target="_blank" rel="noopener noreferrer">Visit bravenstudio.com <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="acc-right">
-          <p class="work-desc">Built a reusable component library and custom page templates for GlycanAge's website including home, how it works, science, and pricing pages. Focused on consistent design language and scalable building blocks.</p>
-          
-        </div>
+        <p class="project-desc">Brand and website for the AI video ad agency I co-run, taken from wireframes to the live site, with every step planned with intention. The site is made for car dealerships and built around the demos: a parallax phone showcase plays real sample ads as you scroll, then leads into results, packages and a short lead form. Meta Pixel is connected to track traffic.</p>
       </div>
-    </div>
-
-    <!-- PROJECT 03 -->
-    <div class="acc-item reveal">
-      <div class="acc-header" data-modal="imageModal" data-modal-src="car2point.mk - Brand identity.jpg" data-modal-title="car2point.mk — Brand Identity">
-        <div class="acc-left">
-          <span class="work-num">Project 03</span>
-          <h3 class="work-name">car2point.mk - Automotive E-Commerce</h3>
-          <div class="work-tags">
-            <span class="tag">WordPress</span>
-            <span class="tag">Web Dev</span>
-            <span class="tag">Social Media</span>
-          </div>
-        </div>
-        <div class="acc-right">
-          <p class="work-desc">Built and maintained a WordPress site for an online vehicle marketplace. Handled design, development, and full social media content strategy including posts, stories, and paid ads over 18 months.</p>
-          <div class="acc-toggle">
-            <span class="toggle-label">View case study</span>
-            <span class="toggle-icon">+</span>
-          </div>
-        </div>
+      <div class="shots">
+        <figure class="shot shot--wide">
+          <button class="shot-frame" type="button" data-full="Braven Studio - Website.jpg" data-title="Braven Studio — Website">
+            <img src="Braven Studio - Website.jpg" alt="Braven Studio website: hero, phone ad demo, services, results, pricing, FAQ and contact form" loading="lazy" decoding="async">
+            <span class="shot-open">View full page</span>
+          </button>
+          <figcaption>Marketing site, desktop</figcaption>
+        </figure>
       </div>
-      <div class="acc-body">
-        <div class="acc-gallery">
-          <div class="gallery-item gallery-item--clickable">
-            <img src="car2point.mk - Brand identity.jpg" alt="car2point.mk Brand Identity">
-          </div>
+    </article>
+
+    <article class="project reveal">
+      <div class="project-head">
+        <div>
+          <h3 class="project-title">GlycanAge landing pages</h3>
+          <p class="project-meta">2024 – 2026 · UX/UI design · Figma · B2B</p>
         </div>
+        <p class="project-desc">Conversion-focused landing pages for GlycanAge's consumer, partner and affiliate audiences. The partner page speaks to clinics and practitioners, while the affiliate page wins over creators with a clear commission structure and strong trust signals.</p>
       </div>
-    </div>
-
-    <!-- PROJECT 04 -->
-    <div class="acc-item reveal">
-      <div class="acc-header" data-href="https://sign-qr-codes.vercel.app/">
-        <div class="acc-left">
-          <span class="work-num">Project 04</span>
-          <h3 class="work-name">Sign QR Codes - Cryptographic Verification</h3>
-          <div class="work-tags">
-            <span class="tag">JavaScript</span>
-            <span class="tag">Cryptography</span>
-            <span class="tag">QR Codes</span>
-            <span class="tag">Web App</span>
-          </div>
-        </div>
-        <div class="acc-right">
-          <p class="work-desc">A web app to generate QR codes signed with a private key using asymmetric cryptography. Anyone can verify the QR code's authenticity using the corresponding public key, ensuring tamper-proof, trustworthy codes. Suitable for event tickets, access passes, and more.</p>
-          <div class="acc-toggle">
-            <span class="toggle-label">Visit live app</span>
-            <span class="toggle-icon">&#8599;</span>
-          </div>
-        </div>
+      <div class="shots shots--3">
+        <figure class="shot">
+          <button class="shot-frame" type="button" data-full="GlycanAge - Affiliate page v1.jpg" data-title="GlycanAge — Affiliate page">
+            <img src="GlycanAge - Affiliate page v1.jpg" alt="GlycanAge affiliate landing page" loading="lazy" decoding="async">
+            <span class="shot-open">View full page</span>
+          </button>
+          <figcaption>Affiliate page</figcaption>
+        </figure>
+        <figure class="shot">
+          <button class="shot-frame" type="button" data-full="GlycanAge - Consumer page v2.jpg" data-title="GlycanAge — Consumer page">
+            <img src="GlycanAge - Consumer page v2.jpg" alt="GlycanAge consumer landing page" loading="lazy" decoding="async">
+            <span class="shot-open">View full page</span>
+          </button>
+          <figcaption>Consumer page</figcaption>
+        </figure>
+        <figure class="shot">
+          <button class="shot-frame" type="button" data-full="GlycanAge - Partner page v2.jpg" data-title="GlycanAge — Partner page">
+            <img src="GlycanAge - Partner page v2.jpg" alt="GlycanAge partner landing page" loading="lazy" decoding="async">
+            <span class="shot-open">View full page</span>
+          </button>
+          <figcaption>Partner page</figcaption>
+        </figure>
       </div>
-    </div>
+    </article>
 
-    <!-- PROJECT 05 -->
-    <div class="acc-item reveal">
-      <div class="acc-header">
-        <div class="acc-left">
-          <span class="work-num">Project 05</span>
-          <h3 class="work-name">Game Design Marathon</h3>
-          <div class="work-tags">
-            <span class="tag">3D Design</span>
-            <span class="tag">Unreal Engine 5</span>
-            <span class="tag">Game Design</span>
-          </div>
+    <article class="project reveal">
+      <div class="project-head">
+        <div>
+          <h3 class="project-title">Gradually</h3>
+          <p class="project-meta">2026 · Product design · WebGL · Design &amp; build</p>
+          <a class="project-link" href="https://gradually-alpha.vercel.app/" target="_blank" rel="noopener noreferrer">Open the live app <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="acc-right">
-          <p class="work-desc">24-hour creative marathon: pitched an original concept, produced a short video trailer, and received an Autodesk Maya certificate. A crash course in creative pressure and rapid prototyping.</p>
-        </div>
+        <p class="project-desc">A gradient generator I built to speed up my own design work and to help other designers do the same. Pick two to six colors and it renders dozens of gradient variations in 15 styles, with a text-contrast check and export to image or a seamless Instagram carousel.</p>
       </div>
-    </div>
+      <div class="shots">
+        <figure class="shot shot--app">
+          <button class="shot-frame" type="button" data-full="Gradually - App.jpg" data-title="Gradually — Gradient generator">
+            <img src="Gradually - App.jpg" alt="Gradually: palette controls on the left and a grid of generated gradient variations on the right" loading="lazy" decoding="async">
+            <span class="shot-open">View full size</span>
+          </button>
+          <figcaption>Gradient generator: palette, styles and variations</figcaption>
+        </figure>
+      </div>
+    </article>
 
-  </div>
-</section>
+    <article class="project reveal">
+      <div class="project-head">
+        <div>
+          <h3 class="project-title">car2point.mk</h3>
+          <p class="project-meta">2021 – 2023 · Brand identity · WordPress · Co-founder</p>
+        </div>
+        <p class="project-desc">A vehicle sales business I co-founded. I created the brand (logo, visual assets and marketing materials), designed and built the WordPress site, and ran its social media.</p>
+      </div>
+      <div class="shots">
+        <figure class="shot shot--wide">
+          <button class="shot-frame" type="button" data-full="car2point.mk - Brand identity.jpg" data-title="car2point.mk — Brand identity">
+            <img src="car2point.mk - Brand identity.jpg" alt="car2point.mk brand identity: logo, colour palette, business cards and typography" loading="lazy" decoding="async">
+            <span class="shot-open">View full page</span>
+          </button>
+          <figcaption>Brand identity: logo, palette, print and type</figcaption>
+        </figure>
+      </div>
+    </article>
 
-<!-- SKILLS -->
-<section id="skills">
-  <p class="section-label reveal">003 — Skills</p>
-  <h2 class="section-title reveal reveal-delay-1">Tools &amp;<br>Technologies</h2>
-  <div class="skills-layout">
-    <div class="skill-group reveal">
-      <p class="skill-group-title">Design &amp; Creative</p>
-      <ul class="skill-list">
-        <li>Figma / Adobe XD</li>
-        <li>Adobe Photoshop</li>
-        <li>Adobe Illustrator</li>
-        <li>Adobe Lightroom</li>
-        <li>Adobe Premiere Pro</li>
-        <li>Adobe After Effects</li>
-        <li>Canva</li>
-        <li>Blender</li>
-        <li>Autodesk Maya</li>
-        <li>Unreal Engine 5</li>
+    <div class="more reveal">
+      <h3 class="more-title">More projects</h3>
+      <ul class="more-list">
+        <li class="more-item">
+          <p class="more-name">GlycanAge platforms</p>
+          <p class="more-desc">Led design of the partner platform clinics and practitioners use worldwide, with role-based access for clinic admins and practitioners, plus a consumer platform that makes biological age results clear to non-specialists.</p>
+          <p class="more-tags">Product design · Design system</p>
+        </li>
+        <li class="more-item is-link">
+          <a class="more-name" href="https://sign-qr-codes.vercel.app/" target="_blank" rel="noopener noreferrer">Sign QR Codes <span aria-hidden="true">↗</span></a>
+          <p class="more-desc">Generates QR codes signed with a private key so anyone can verify them with the public key. Built for tamper-proof tickets and access passes.</p>
+          <p class="more-tags">Web app · JavaScript</p>
+        </li>
+        <li class="more-item">
+          <p class="more-name">Game Design Marathon</p>
+          <p class="more-desc">24-hour marathon: pitched an original concept, produced a short trailer in Unreal Engine 5 and earned an Autodesk Maya certificate.</p>
+          <p class="more-tags">3D · Game design</p>
+        </li>
       </ul>
     </div>
-    <div class="skill-group reveal reveal-delay-1">
-      <p class="skill-group-title">Web &amp; Development</p>
-      <ul class="skill-list">
-        <li>HTML / CSS</li>
-        <li>JavaScript</li>
-        <li>WordPress</li>
-        <li>Webflow</li>
-        <li>Java</li>
-        <li>C / C++</li>
-        <li>Python</li>
-        <li>Microsoft Access</li>
-        <li>Microsoft Office Suite</li>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section wrap split" data-nav="experience">
+    <h2 class="section-title split-title reveal">Experience</h2>
+    <ol class="timeline reveal">
+      <li>
+        <p class="tl-date">2026 – Present</p>
+        <div>
+          <h3 class="tl-role">Co-Founder &amp; Design Lead <span>Braven Studio · AI marketing agency</span></h3>
+          <ul class="tl-points">
+            <li>Co-founded an agency that makes AI video ads for businesses in North Macedonia.</li>
+            <li>Designed the brand and the website, from wireframes to the live site.</li>
+            <li>Direct the creative for client ads, mixing AI tools with editing and design.</li>
+            <li>Handle clients from the first brief through to delivery.</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <p class="tl-date">Feb 2024 – Jun 2026</p>
+        <div>
+          <h3 class="tl-role">UX/UI Designer <span>GlycanAge</span></h3>
+          <ul class="tl-points">
+            <li>Led design of the partner platform used by clinics and practitioners worldwide, including role-based access for clinic admins and practitioners.</li>
+            <li>Designed the consumer platform, making biomarker and biological age results understandable to non-specialists.</li>
+            <li>Worked with developers on the design system and reviewed builds against designs.</li>
+            <li>Joined as a junior designer and was promoted to mid-level.</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <p class="tl-date">Apr – Jun 2023</p>
+        <div>
+          <h3 class="tl-role">Graphic Designer <span>General Studio</span></h3>
+          <ul class="tl-points">
+            <li>Designed campaign assets for several clients on tight production deadlines.</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <p class="tl-date">Jul 2021 – Jun 2023</p>
+        <div>
+          <h3 class="tl-role">Co-Founder, Web &amp; Social Media <span>car2point.mk · Vehicle sales</span></h3>
+          <ul class="tl-points">
+            <li>Designed and built the WordPress website.</li>
+            <li>Created the brand: logo, visual assets and marketing materials.</li>
+            <li>Ran the business's social media.</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- TOOLKIT -->
+  <section id="toolkit" class="section wrap split" data-nav="experience">
+    <h2 class="section-title split-title reveal">Toolkit</h2>
+    <dl class="rows reveal">
+      <div><dt>UX &amp; product</dt><dd>User research, wireframing &amp; prototyping, information architecture, design systems, component libraries</dd></div>
+      <div><dt>Design</dt><dd>Figma, Adobe XD, Photoshop, Illustrator, After Effects, Canva</dd></div>
+      <div><dt>AI &amp; automation</dt><dd>Claude, ChatGPT, prompt writing, AI image &amp; video tools, workflow automation</dd></div>
+      <div><dt>Development</dt><dd>HTML/CSS, JavaScript, React, .NET, Python, Java, C/C++, WordPress</dd></div>
+    </dl>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section wrap split" data-nav="about">
+    <h2 class="section-title split-title reveal">About</h2>
+    <div class="reveal">
+      <p class="statement">I design it, and I can build it.</p>
+      <p class="about-body">I spent two and a half years at GlycanAge, a longevity biotech company, designing the platform clinics and practitioners use as well as the consumer side of the product. I studied software engineering, so I work comfortably with developers and can build what I design. Today I co-run Braven Studio, a small agency that makes AI-generated video ads.</p>
+      <dl class="rows rows--compact">
+        <div><dt>Education</dt><dd>Software Engineering &amp; Information Systems, FINKI Skopje, 2021 – 2025</dd></div>
+        <div><dt>Award</dt><dd>Codefest 2018 programming hackathon: 1st place for UX/UI and 2nd place in our category.</dd></div>
+        <div><dt>Languages</dt><dd>Macedonian (native), English (C1), French (A2)</dd></div>
+        <div><dt>Volunteering</dt><dd>HopeGivers NGO since 2019, distributing donations to families in need and making the NGO's social posts</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section wrap contact" data-nav="contact">
+    <h2 class="contact-title reveal">Let's<br>Work<br><em>Together.</em></h2>
+    <div class="contact-body reveal">
+      <p class="contact-lead">Got a product, platform or landing page in mind? Email is the quickest way to reach me.</p>
+      <div class="contact-row">
+        <a class="email-link" href="mailto:mladens219@gmail.com">mladens219@gmail.com</a>
+        <button class="icon-btn copy-btn" type="button" id="copyEmail" data-copy="mladens219@gmail.com" aria-label="Copy email address">
+          <svg class="i-copy" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M15 9V6.5A2.5 2.5 0 0 0 12.5 4h-6A2.5 2.5 0 0 0 4 6.5v6A2.5 2.5 0 0 0 6.5 15H9"/></svg>
+          <svg class="i-check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+          <span class="tip" id="copyTip" aria-hidden="true">Copy email</span>
+        </button>
+        <span class="visually-hidden" id="copyStatus" role="status"></span>
+      </div>
+      <ul class="contact-links">
+        <li><a href="tel:+38976200465">+389 76 200 465</a></li>
+        <li><a href="https://www.linkedin.com/in/mladen-stojanovski/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></li>
+        <li><a href="Mladen-Stojanovski-CV.pdf" target="_blank" rel="noopener">View CV <span aria-hidden="true">↗</span></a></li>
       </ul>
     </div>
-    <div class="skill-group reveal reveal-delay-2">
-      <p class="skill-group-title">Design Process &amp; Collaboration</p>
-      <ul class="skill-list">
-        <li>UX Research</li>
-        <li>Wireframing &amp; Prototyping</li>
-        <li>Component System Design</li>
-        <li>Social Media Management</li>
-        <li>Microsoft Teams / Zoom</li>
-        <li>Slack / Discord</li>
-        <li>Agile / Remote Work</li>
-      </ul>
-    </div>
-    <div class="skill-group reveal reveal-delay-3">
-      <p class="skill-group-title">Data &amp; Analytics</p>
-      <ul class="skill-list">
-        <li>Python for Data Science</li>
-        <li>Data Analysis</li>
-        <li>Predictive Modelling</li>
-        <li>pandas / NumPy</li>
-        <li>Matplotlib / Seaborn</li>
-        <li>Scikit-learn</li>
-        <li>Jupyter Notebooks</li>
-      </ul>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <p class="section-label reveal">004 — Journey</p>
-  <h2 class="section-title reveal reveal-delay-1">Work<br>Experience</h2>
-  <div class="exp-list">
-    <div class="exp-item reveal">
-      <div class="exp-date">Feb 2024 — Present</div>
-      <div>
-        <p class="exp-role">UX/UI Designer</p>
-        <p class="exp-company">GlycanAge</p>
-        <p class="exp-desc">Designing landing pages, custom web components, and a design system for a longevity biotech company. Delivering partner, affiliate, home, how-it-works, science, and pricing pages. Leading UX research and maintaining a reusable Figma component library.</p>
-      </div>
-    </div>
-    <div class="exp-item reveal">
-      <div class="exp-date">Apr 2023 — Jun 2023</div>
-      <div>
-        <p class="exp-role">Graphic Designer</p>
-        <p class="exp-company">General Studio</p>
-        <p class="exp-desc">Photo editing, manipulation, color grading, cutouts, and background replacement using Adobe Photoshop. Delivered production-ready visual assets for client campaigns.</p>
-      </div>
-    </div>
-    <div class="exp-item reveal">
-      <div class="exp-date">Jul 2021 — Mar 2023</div>
-      <div>
-        <p class="exp-role">Web Developer &amp; Social Media Manager</p>
-        <p class="exp-company">car2point.mk</p>
-        <p class="exp-desc">Created, designed, and maintained a WordPress vehicle marketplace. Managed and produced all social media content — posts, stories, and paid ads — growing the brand's digital presence over 18 months.</p>
-      </div>
-    </div>
-  </div>
-</section>
+</main>
 
-<!-- ABOUT -->
-<div id="about">
-  <div>
-    <p class="section-label reveal" style="margin-bottom:24px;">005 — About</p>
-    <p class="about-text reveal reveal-delay-1">"A designer who <em>codes</em>, and a developer who understands <em>aesthetics</em>."</p>
-    <p class="about-body reveal reveal-delay-2">I'm a senior Computer Engineering student at FINKI, Skopje, specializing in software engineering and information systems. I bridge the gap between design and development — building things that look great and work flawlessly. Outside of tech, I volunteer with HopeGivers, creating video content for donation events.</p>
-    <div class="about-stats reveal reveal-delay-3">
-      <div>
-        <p class="stat-num">4<span>+</span></p>
-        <p class="stat-label">Years Experience</p>
-      </div>
-      <div>
-        <p class="stat-num">2<span>nd</span></p>
-        <p class="stat-label">Codefest 2018</p>
-      </div>
-      <div>
-        <p class="stat-num">5<span>+</span></p>
-        <p class="stat-label">Projects Delivered</p>
-      </div>
-      <div>
-        <p class="stat-num">C<span>1</span></p>
-        <p class="stat-label">English Level</p>
-      </div>
-    </div>
-  </div>
-  <div class="reveal reveal-delay-2">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-key">Location</span><span class="info-val">Skopje, North Macedonia</span></div>
-      <div class="info-row"><span class="info-key">Education</span><span class="info-val">FINKI — Software Engineering &amp; IS</span></div>
-      <div class="info-row"><span class="info-key">Languages</span><span class="info-val"><span class="lang-badge pro">Macedonian — Native</span><span class="lang-badge pro">English — C1</span><span class="lang-badge">French — A2</span></span></div>
-      <div class="info-row"><span class="info-key">Award</span><span class="info-val">Best UI/UX — Codefest 2018</span></div>
-      <div class="info-row"><span class="info-key">Volunteer</span><span class="info-val">HopeGivers NGO — Since 2019</span></div>
-      <div class="info-row"><span class="info-key">Email</span><span class="info-val">mladens219@gmail.com</span></div>
-      <div class="info-row"><span class="info-key">Phone</span><span class="info-val">(+389) 76200465</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- CONTACT -->
-<section id="contact">
-  <p class="section-label">006 — Get in Touch</p>
-  <h2 class="contact-title">Let's<br>Work<br><em>Together.</em></h2>
-  <div class="contact-links">
-    <a href="mailto:mladens219@gmail.com" class="contact-link">&#9993; mladens219@gmail.com</a>
-    <a href="tel:+38976200465" class="contact-link">&#9990; (+389) 76200465</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>&copy; 2026 Mladen Stojanovski. All rights reserved.</p>
-  <p>Designed &amp; Built with intention &middot; Skopje, MK</p>
+<footer class="footer wrap">
+  <p>© 2026 Mladen Stojanovski</p>
+  <a href="#top">Back to top ↑</a>
 </footer>
 
-<!-- IMAGE MODAL -->
-<div id="imageModal" class="modal-overlay">
-  <div class="modal-container">
-    <div class="modal-header">
-      <span class="modal-title" id="modalTitle"></span>
-      <button class="modal-close" id="modalClose">&#215;</button>
+<!-- LIGHTBOX -->
+<dialog class="lightbox" id="lightbox" aria-labelledby="lightboxTitle">
+  <div class="lightbox-inner">
+    <div class="lightbox-bar">
+      <p class="lightbox-title" id="lightboxTitle"></p>
+      <button class="icon-btn icon-btn--sm" type="button" id="lightboxClose" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
     </div>
-    <div class="modal-body">
-      <img id="modalImg" src="" alt="">
+    <div class="lightbox-body" id="lightboxBody">
+      <img id="lightboxImg" src="" alt="">
     </div>
   </div>
-</div>
+</dialog>
 
 <script src="script.js"></script>
 </body>
